@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtered Mutual Funds</title>
+    <style>
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Top 10 Mutual Funds based on Filters</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Sub Category</th>
+                <th>CAGR 3Y</th>
+                <th>CAGR 5Y</th>
+                <th>Sharpe Ratio</th>
+                <th>Alpha</th>
+                <th>Plan</th>
+                <th>Expense Ratio</th>
+                <th>Minimum Lumpsum</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for fund in funds %}
+            <tr>
+                <td>{{ fund['Name'] }}</td>
+                <td>{{ fund['Sub Category'] }}</td>
+                <td>{{ fund['CAGR 3Y'] }}</td>
+                <td>{{ fund['CAGR 5Y'] }}</td>
+                <td>{{ fund['Sharpe Ratio'] }}</td>
+                <td>{{ fund['Alpha'] }}</td>
+                <td>{{ fund['Plan'] }}</td>
+                <td>{{ fund['Expense Ratio'] }}</td>
+                <td>{{ fund['Minimum Lumpsum'] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+
+</html>
